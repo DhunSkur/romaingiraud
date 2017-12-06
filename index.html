@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Romain Giraud</title>
+</head>
+<script>
+window.onload = function(){
+var section = document.querySelector('.section'),
+wrapper = document.querySelector('.wraparallax'),
+        layerOne = document.querySelector('#uno'),
+        layerTwo = document.querySelector('#dos'),
+  infos = document.querySelector('.infos');
+
+section.addEventListener('mousemove',function(e){
+    var pageX = e.clientX,
+            pageY = e.clientY;
+    layerOne.style.webkitTransform = 'translateX(' + pageX/200 + '%) translateY(' + pageY/200 + '%)';
+layerOne.style.transform = 'translateX(' + pageX/200 + '%) translateY(' + pageY/200 + '%)';
+layerTwo.style.webkitTransform = 'translateX(' + pageX/150 + '%) translateY(' + pageY/250 + '%)';
+layerTwo.style.transform = 'translateX(' + pageX/150 + '%) translateY(' + pageY/250 + '%)';
+    wrapper.style = 'background-position:'+ pageX/200 +'px center';
+});
+}
+</script>
+<style>
+    *{
+
+
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+
+}
+.wraparallax {
+	width:100%;
+	min-height: 700px;
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(http://static.tumblr.com/69779efdf0037a8c0338d1efb34b5784/mwjnetw/K2jmst8xo/tumblr_static_la-d__fence-_191-2.jpg);
+	background-size: cover;
+	overflow: hidden;
+}
+
+.layer{
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+#uno {
+	background-image: url(http://burlak.me/wp-content/themes/eugeneburlak/images/layer-1.png);
+	z-index: 2;
+}
+.infos {
+    position: absolute;
+    z-index:100;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    width: 200px;
+    height: 200px;
+  vertical-align: middle;
+
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+h1 {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 32px;
+  color: white;
+}
+.content {
+
+
+}
+</style>
+<body>
+    <div class="section">
+    <div class="infos">
+
+  <h1>Bonjour,</h1>
+  Je suis webdsgnr et intégrt
+
+  </div>
+
+
+<div class="wraparallax">
+  <div id="uno" class="layer"></div>
+  <div id="dos" class="layer"></div>
+</div>
+</div>
+<div class="content">
+
+</div>
+
+</body>
+</html>
